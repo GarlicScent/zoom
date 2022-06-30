@@ -10,11 +10,12 @@
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.5",
     "@babel/node": "^7.18.5",
-    "@babel/preset-env": "^7.18.2",
-    "nodemon": "^2.0.16"
+    "@babel/preset-env": "^7.18.2"
   },
   "dependencies": {
     "express": "^4.18.1",
-    "pug": "^3.0.2"
+    "nodemon": "^2.0.16",
+    "pug": "^3.0.2",
+    "ws": "^8.8.0"
   }
 }
