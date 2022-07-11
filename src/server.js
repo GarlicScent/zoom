@@ -51,13 +51,13 @@ wsServer.on("connection", (socket) => {
   socket["nickname"] = "Anon";
   wsServer.sockets.emit("room_change", publicRooms());
   socket.onAny((event) => {
-    console.log(wsServer.sockets.adapter);
+    // console.log(wsServer.sockets.adapter);
     console.log(`Socket Event: ${event}`);
   });
-  socket.on("enter_room", (roomName, nickname, done) => {
+  socket.on("enter_room", (roomName, nickname, showRoom) => {
     socket.join(roomName);
     socket["nickname"] = nickname;
-    done();
+    showRoom(countRoom(roomName));
     socket.to(roomName).emit("welcome", socket.nickname, countRoom(roomName));
     wsServer.sockets.emit("room_change", publicRooms());
   });
